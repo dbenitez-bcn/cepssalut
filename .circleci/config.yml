@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  ci:
+  pipeline:
     docker:
       - image: cimg/node:lts
     steps:
@@ -27,9 +27,9 @@ jobs:
 
 workflows:
   version: 2
-  ci:
+  workflow:
     jobs:
-      - ci:
+      - pipeline:
           filters:
             branches:
               only:
