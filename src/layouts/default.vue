@@ -1,6 +1,8 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+<ceps-app-bar></ceps-app-bar>
+
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -84,7 +86,7 @@
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
