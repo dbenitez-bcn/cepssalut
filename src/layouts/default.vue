@@ -1,6 +1,11 @@
 <template>
   <v-app dark>
 <ceps-app-bar></ceps-app-bar>
+    <v-main>
+      <v-container>
+        <Nuxt />
+      </v-container>
+    </v-main>
 
     <!-- <v-navigation-drawer
       v-model="drawer"
