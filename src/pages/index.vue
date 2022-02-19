@@ -84,10 +84,9 @@
 </template>
 
 <script>
-import TesterinoCeps from "~/components/TesterinoCeps.vue";
 import TitleAndSubtitle from "~/components/TitleAndSubtitle.vue";
 export default {
-  components: { TesterinoCeps, TitleAndSubtitle },
+  components: { TitleAndSubtitle },
   name: "IndexPage",
   data() {
     return {
