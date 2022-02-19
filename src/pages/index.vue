@@ -1,9 +1,16 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-container>
+    <title-and-subtitle
+      :title="title"
+      :subtitle="subtitle"
+    ></title-and-subtitle>
+  </v-container>
+  <!-- <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-card class="logo py-4 d-flex justify-center">
         <NuxtLogo />
         <VuetifyLogo />
+        <testerino-ceps />
       </v-card>
       <v-card>
         <v-card-title class="headline">
@@ -73,11 +80,21 @@
         </v-card-actions>
       </v-card>
     </v-col>
-  </v-row>
+  </v-row> -->
 </template>
 
 <script>
+import TesterinoCeps from "~/components/TesterinoCeps.vue";
+import TitleAndSubtitle from "~/components/TitleAndSubtitle.vue";
 export default {
-  name: 'IndexPage'
-}
+  components: { TesterinoCeps, TitleAndSubtitle },
+  name: "IndexPage",
+  data() {
+    return {
+      title: "cepssalut",
+      subtitle:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, orci at consectetur porttitor, velit nisi accumsan mauris, ut vehicula augue orci nec est. Aenean.",
+    };
+  },
+};
 </script>
