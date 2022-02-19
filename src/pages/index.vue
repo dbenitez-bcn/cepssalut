@@ -4,6 +4,7 @@
       :title="title"
       :subtitle="subtitle"
     ></title-and-subtitle>
+    <v-divider class="d-none d-sm-flex"></v-divider>
   </v-container>
   <!-- <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
