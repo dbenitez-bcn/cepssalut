@@ -3,6 +3,7 @@
       app
       color="primary"
       class="d-flex justify-center justify-sm-start"
+      elevation="0"
     >
       <v-toolbar-title >CepsSalut</v-toolbar-title>
     </v-app-bar>
