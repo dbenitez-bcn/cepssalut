@@ -7,10 +7,11 @@ export default class InMemoryAreaRepository implements AreaRepository {
         private database: Map<string, any>
     ) { }
 
-    getAll(): Area[] {
+    getAll = (): Area[] => {
         return Array.from(this.database.keys()).map(this.getById)
     }
-    getById(id: string): Area {
+
+    getById = (id: string): Area => {
         return this.toArea(id, this.database.get(id));
     }
 
