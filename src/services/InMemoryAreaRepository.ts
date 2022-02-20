@@ -4,23 +4,18 @@ import AreaRepository from "../domain/AreaRepository";
 
 export default class InMemoryAreaRepository implements AreaRepository {
     constructor(
-        private database: Map<String, any>
+        private database: Map<string, any>
     ) { }
 
     getAll(): Area[] {
-        var list: Area[] = [];
-        for (const area of this.database.values()) {
-            list.push(new Area(area["title"], area["description"], area["image"]));
-        }
-
-        return list;
+        return Array.from(this.database.keys()).map(this.getById)
     }
-    getById(id: String): Area {
-        return this.toArea(this.database.get(id));
+    getById(id: string): Area {
+        return this.toArea(id, this.database.get(id));
     }
 
-    private toArea(area: any): Area {
-        return new Area(area["title"], area["description"], area["image"]);
+    private toArea(id: string, area: any): Area {
+        return new Area(id, area["title"], area["description"], area["image"]);
     }
 
 }
