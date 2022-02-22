@@ -5,6 +5,9 @@
       :subtitle="subtitle"
     ></title-and-subtitle>
     <v-divider class="d-none d-sm-flex"></v-divider>
+    <area-card v-for="area in areas" :key="area.id" :area="area"></area-card>
+
+    <!-- <img src="~/assets/area/area-collectiu.jpg" alt="Girl in a jacket" width="500" height="600"> -->
   </v-container>
   <!-- <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
@@ -84,17 +87,18 @@
   </v-row> -->
 </template>
 
-<script>
-import TitleAndSubtitle from "~/components/TitleAndSubtitle.vue";
-export default {
-  components: { TitleAndSubtitle },
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "IndexPage",
   data() {
     return {
       title: "cepssalut",
       subtitle:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, orci at consectetur porttitor, velit nisi accumsan mauris, ut vehicula augue orci nec est. Aenean.",
+      areas: this.$areas.getAll(),
     };
   },
-};
+});
 </script>
