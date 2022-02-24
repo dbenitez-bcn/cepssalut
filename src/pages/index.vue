@@ -6,8 +6,6 @@
     ></title-and-subtitle>
     <v-divider class="d-none d-sm-flex"></v-divider>
     <area-list-view></area-list-view>
-    <area-card v-for="area in areas" :key="area.id" :area="area"></area-card>
-
   </v-container>
 </template>
 

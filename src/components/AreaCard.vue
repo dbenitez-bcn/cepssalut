@@ -1,20 +1,18 @@
 <template>
-  <v-card class="" height="400">
+  <v-card>
     <v-img
       :src="require(`~/assets/areas/${area.image}`)"
       height="200px"
     ></v-img>
-
-    <v-card-title>
-      {{ area.title }}
-    </v-card-title>
-
-    <v-card-subtitle class="subtext">
-      {{ area.description }}
-    </v-card-subtitle>
+    <div class="one-line title px-4 pt-4" v-text="area.title"></div>
+    <div
+      class="body-1 subtext text-justify px-4 pt-4"
+      v-text="area.description"
+    ></div>
 
     <v-card-actions>
-      <v-btn color="orange lighten-2" text> Explore </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn color="secondary" text>Veure mes</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -31,10 +29,16 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.one-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
 .subtext {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   overflow: hidden;
 }
 </style>

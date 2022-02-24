@@ -68,7 +68,7 @@ export default {
       themes: {
         light: {
           primary: "#8ED92F",
-          secondary: colors.blueGrey.base,
+          secondary: "#00F0FF",
           accent: colors.lime.base,
           error: colors.deepOrange.base,
           warning: colors.yellow.base,
