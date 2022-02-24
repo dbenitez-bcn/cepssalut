@@ -7,15 +7,17 @@
     <v-divider class="d-none d-sm-flex"></v-divider>
     <area-list-view></area-list-view>
     <v-divider class="d-none d-sm-flex"></v-divider>
+    <email-box></email-box>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import AreaListView from "~/components/AreaListView.vue";
+import EmailBox from "~/components/EmailBox.vue";
 
 export default Vue.extend({
-  components: { AreaListView },
+  components: { AreaListView, EmailBox },
   name: "IndexPage",
   data() {
     return {

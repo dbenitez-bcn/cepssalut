@@ -6,6 +6,7 @@
         <Nuxt />
       </v-container>
     </v-main>
+    <ceps-footer></ceps-footer>
 
     <!-- <v-navigation-drawer
       v-model="drawer"
@@ -96,7 +97,9 @@
 </template>
 
 <script>
+import CepsFooter from '~/components/CepsFooter.vue'
 export default {
+  components: { CepsFooter },
   name: 'DefaultLayout',
   data () {
     return {
