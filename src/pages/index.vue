@@ -6,6 +6,7 @@
     ></title-and-subtitle>
     <v-divider class="d-none d-sm-flex"></v-divider>
     <area-list-view></area-list-view>
+    <v-divider class="d-none d-sm-flex"></v-divider>
   </v-container>
 </template>
 
