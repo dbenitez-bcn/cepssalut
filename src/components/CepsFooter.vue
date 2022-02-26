@@ -1,5 +1,5 @@
 <template>
-  <v-footer app absolute="false" color="black" class="white--text">
+  <v-footer app :absolute="true" color="black" class="white--text">
     <v-container fluid>
       <v-row>
         <v-col> {{ email }}</v-col>
