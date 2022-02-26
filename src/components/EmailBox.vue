@@ -25,7 +25,7 @@
               class="mr-4"
               @click="submit"
             >
-              Validate
+              Enviar
             </v-btn>
           </div>
         </v-form>
