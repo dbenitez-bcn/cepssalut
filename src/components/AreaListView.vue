@@ -1,5 +1,5 @@
 <template>
-  <v-container class="d-flex flex-wrap">
+  <v-container class="d-flex flex-wrap px-0">
     <v-col sm="6" v-for="area in areas" :key="area.id">
       <area-card :area="area"></area-card>
     </v-col>
