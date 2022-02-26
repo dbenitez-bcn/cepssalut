@@ -19,8 +19,8 @@ export default {
   // Source dir: https://nuxtjs.org/docs/directory-structure/nuxt-config/#srcdir
   srcDir: 'src/',
 
-  // Build dir: https://nuxtjs.org/docs/directory-structure/nuxt
-  buildDir: 'functions/.nuxt',
+  // Server side rendering: https://nuxtjs.org/docs/configuration-glossary/configuration-ssr
+  ssr: false,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -93,6 +93,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extractCSS: true,
   }
 }
