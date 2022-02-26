@@ -20,10 +20,17 @@ jobs:
           paths:
             - ~/.npm
 
-
       - run:
           name: Run tests
           command: npm run test
+
+      - build:
+          name: Build application
+          command: npm run build
+
+      - deploy:
+          name: Deploy to firebase
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 
 workflows:
   version: 2
@@ -34,4 +41,3 @@ workflows:
             branches:
               only:
                 - main
-                - master
