@@ -6,7 +6,7 @@
       </v-col>
     </v-row>
     <v-row justify="center" >
-      <v-col sm="6">
+      <v-col sm="8">
         <div class="body-1 text-justify" v-text="subtitle"></div>
       </v-col>
     </v-row>
