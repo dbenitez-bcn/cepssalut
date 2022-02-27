@@ -56,7 +56,7 @@ export default Vue.extend({
   },
   methods: {
     submit() {
-      alert("sumbited!");
+      // alert("sumbited!");
     },
   },
 });
