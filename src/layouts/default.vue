@@ -1,10 +1,8 @@
 <template>
   <v-app dark>
-<ceps-app-bar></ceps-app-bar>
+    <ceps-app-bar></ceps-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
     <ceps-footer></ceps-footer>
 
@@ -97,32 +95,32 @@
 </template>
 
 <script>
-import CepsFooter from '~/components/CepsFooter.vue'
+import CepsFooter from "~/components/CepsFooter.vue";
 export default {
   components: { CepsFooter },
-  name: 'DefaultLayout',
-  data () {
+  name: "DefaultLayout",
+  data() {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          icon: "mdi-apps",
+          title: "Welcome",
+          to: "/",
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
+          icon: "mdi-chart-bubble",
+          title: "Inspire",
+          to: "/inspire",
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
-}
+      title: "Vuetify.js",
+    };
+  },
+};
 </script>
