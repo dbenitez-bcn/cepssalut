@@ -26,7 +26,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      title: "cepssalut",
+      title: "Ceps Salut",
       subtitle:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, orci at consectetur porttitor, velit nisi accumsan mauris, ut vehicula augue orci nec est. Aenean.",
     };
