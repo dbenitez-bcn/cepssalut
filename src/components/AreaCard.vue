@@ -13,7 +13,7 @@
 
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="secondary" text>Veure mes</v-btn>
+      <v-btn color="secondary" text><nuxt-link :to="`/area/${area.id}`" class="secondary--text">Veure mes</nuxt-link></v-btn>
     </v-card-actions>
   </v-card>
 </template>
