@@ -7,9 +7,10 @@
             Tens mes dubtes? Contacte'ns!
           </div>
           <v-text-field
-            v-model="email"
+            v-model="from"
             outlined
             label="Email"
+            placeholder="Escriu aqui el teu email"
             :rules="[rules.required, rules.email]"
           ></v-text-field>
           <v-textarea
@@ -42,7 +43,7 @@ export default Vue.extend({
     return {
       valid: false,
       body: "",
-      email: "",
+      from: "",
       rules: {
         required: (value: string) => !!value || "",
         email: (value: string) => {
