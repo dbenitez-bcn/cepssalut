@@ -19,6 +19,11 @@ import EmailBox from "~/components/EmailBox.vue";
 export default Vue.extend({
   components: { AreaListView, EmailBox },
   name: "IndexPage",
+  head() {
+    return {
+      title: "Inici"
+    }
+  },
   data() {
     return {
       title: "cepssalut",
