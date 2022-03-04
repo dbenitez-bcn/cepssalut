@@ -28,7 +28,7 @@ export default Vue.extend({
     return {
       title: "Ceps Salut",
       subtitle:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, orci at consectetur porttitor, velit nisi accumsan mauris, ut vehicula augue orci nec est. Aenean.",
+        "La missió de la nostra entitat és promoure la salut i contribuir-ne a la prevenció afavorint hàbits i entorns saludables per tal de millorar la qualitat de vida de la població i així reduir les desigualtats en salut en el món.",
     };
   },
 });
