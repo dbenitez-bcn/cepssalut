@@ -22,7 +22,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      email: "infoceps@gmail.com",
+      email: "infocepssalut@gmail.com",
       phone: "933456048",
       cepsalut: "Ceps Salut",
     };
