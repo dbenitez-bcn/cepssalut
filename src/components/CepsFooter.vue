@@ -22,8 +22,8 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      email: "email@cepssalut.com",
-      phone: "+34 654654654",
+      email: "infoceps@gmail.com",
+      phone: "933456048",
       cepsalut: "Ceps Salut",
     };
   },
