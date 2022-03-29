@@ -48,6 +48,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://firebase.nuxtjs.org/
+    '@nuxtjs/firebase'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -91,7 +93,31 @@ export default {
     }
   },
 
+  // nuxt firebase docs: https://firebase.nuxtjs.org/guide/options
+  firebase: {
+    config: {
+      // todo: add end and prod based on nodeenv
+      apiKey: process.env.FIRE_KEY, // TODO: hide this
+      authDomain: "ceps-salut.firebaseapp.com",
+      projectId: "ceps-salut",
+      storageBucket: "ceps-salut.appspot.com",
+      messagingSenderId: "410482945235",
+      appId: "1:410482945235:web:187774d05b04e2f6573826",
+      measurementId: "G-GNP7TX6S9C"
+    },
+    services: {
+      auth: true,
+      firestore: true,
+      storage: true,
+    }
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // env configuration: https://nuxtjs.org/docs/configuration-glossary/configuration-env/
+  env: {
+    FIRE_KEY: process.env.FIRE_KEY
   }
 }

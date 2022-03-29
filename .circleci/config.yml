@@ -26,7 +26,7 @@ jobs:
 
       - run:
           name: Build application
-          command: npm run build
+          command: FIRE_KEY=$FIRE_KEY npm run build
 
       - run:
           name: Deploy to firebase
