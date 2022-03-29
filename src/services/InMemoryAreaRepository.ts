@@ -7,12 +7,18 @@ export default class InMemoryAreaRepository implements AreaRepository {
         private database: Map<string, any>
     ) { }
 
-    getAll = (): Area[] => {
-        return Array.from(this.database.keys()).map(this.getById)
+    getAll = async(): Promise<Area[]> => {
+        const ids = Array.from(this.database.keys());
+        const foo: Area[] = [];
+        for(let i = 0; i < ids.length; i++) {
+            const area = await this.getById(ids[i]);
+            foo.push(area);
+        }
+        return foo;
     }
 
-    getById = (id: string): Area => {
-        return this.toArea(id, this.database.get(id));
+    getById = async (id: string): Promise<Area> => {
+        return Promise.resolve(this.toArea(id, this.database.get(id)));
     }
 
     private toArea(id: string, area: any): Area {

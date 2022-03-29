@@ -1,6 +1,6 @@
 import Area from './Area';
 
 export default interface AreaRepository {
-    getAll(): Area[],
-    getById(id: String): Area,
+    getAll(): Promise<Area[]>,
+    getById(id: String): Promise<Area>,
 }

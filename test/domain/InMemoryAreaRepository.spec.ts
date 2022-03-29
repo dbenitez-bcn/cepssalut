@@ -17,16 +17,16 @@ describe("InMemoryAreaRepository", () => {
     ]);
 
     const sut = new InMemoryAreaRepository(database);
-    it("should return all areas", () => {
-        const got = sut.getAll();
+    it("should return all areas", async () => {
+        const got = await sut.getAll();
 
         expect(got).toHaveLength(2);
         expect(got[0]).toStrictEqual(new Area("area-1", "Title area 1", "Description area 1", "image/path/area1.png"));
         expect(got[1]).toStrictEqual(new Area("area-2", "Title area 2", "Description area 2", "image/path/area2.png"));
     })
 
-    it("Should return the area for the given id", () => {
-        const got = sut.getById("area-1");
+    it("Should return the area for the given id", async () => {
+        const got = await sut.getById("area-1");
 
         expect(got).toStrictEqual(new Area("area-1", "Title area 1", "Description area 1", "image/path/area1.png"));
     })
