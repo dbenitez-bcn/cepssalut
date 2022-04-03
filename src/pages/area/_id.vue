@@ -1,6 +1,13 @@
 <template>
   <v-container class="pt-0">
-    <p v-if="$fetchState.pending"></p>
+    <div class="text-center" v-if="$fetchState.pending">
+      <v-progress-circular
+        indeterminate
+        size="50"
+        color="primary"
+        class="ma-2"
+      ></v-progress-circular>
+    </div>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
       <v-img
@@ -19,20 +26,12 @@
 
 <script>
 import Vue from "vue";
-import Area from "~/domain/Area";
 
 export default Vue.extend({
   head() {
     return {
       title: this.area ? this.area.id : "",
     };
-  },
-  mounted() {
-    this.$fire.firestore
-      .collection("areas")
-      .doc("inmigrants")
-      .get()
-      .then((fo) => console.log(fo.data().title));
   },
   data() {
     return {

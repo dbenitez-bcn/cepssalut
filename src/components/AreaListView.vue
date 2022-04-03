@@ -1,6 +1,13 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending"></p>
+    <div class="text-center" v-if="$fetchState.pending">
+      <v-progress-circular
+        indeterminate
+        size="50"
+        color="primary"
+        class="ma-2"
+      ></v-progress-circular>
+    </div>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <v-container v-else class="d-flex flex-wrap px-0">
       <v-col sm="6" v-for="area in areas" :key="area.id">

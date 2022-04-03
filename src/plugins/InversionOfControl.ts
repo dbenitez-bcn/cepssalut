@@ -1,12 +1,14 @@
-import Vue from 'vue';
-import areasDatabase from '~/assets/datasources/AreasDatabase';
+import { Plugin, Context } from '@nuxt/types';
 import AreaRepository from '~/domain/AreaRepository';
-import InMemoryAreaRepository from '~/services/InMemoryAreaRepository';
+import FirebaseAreaRepository from '~/services/FirebaseAreaRepository';
 
 declare module 'vue/types/vue' {
   interface Vue {
     $areas: AreaRepository
   }
 }
+const areas: Plugin = (context: Context, inject) => {
+  inject('areas', new FirebaseAreaRepository(context.$fire.firestore));
+}
 
-Vue.prototype.$areas = new InMemoryAreaRepository(areasDatabase);
+export default areas;
