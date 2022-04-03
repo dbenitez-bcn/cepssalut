@@ -5,11 +5,18 @@
     class="d-flex justify-center justify-sm-start"
     elevation="0"
   >
-    <div
+  <v-img
+      @click="toHome"
+        :src="require(`~/assets/images/logo-ceps.jpg`)"
+        max-height="50"
+        contain
+      class="clickable"
+      ></v-img>
+    <!-- <div
       class="title text-center clickable"
       v-text="title"
       @click="toHome"
-    ></div>
+    ></div> -->
   </v-app-bar>
 </template>
 
