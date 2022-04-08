@@ -55,8 +55,8 @@ export default Vue.extend({
     };
   },
   methods: {
-    submit() {
-      // alert("sumbited!");
+    async submit() {
+      await this.$mails.sendMail(this.from, "dbr.bcn@gmail.com", this.body);
     },
   },
 });
