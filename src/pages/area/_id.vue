@@ -20,7 +20,7 @@
       ></title-and-subtitle>
     </div>
     <v-divider></v-divider>
-    <email-box></email-box>
+    <email-box :to="area ? area.mailTo : '' "></email-box>
   </v-container>
 </template>
 

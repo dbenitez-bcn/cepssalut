@@ -39,6 +39,9 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  props: {
+    to: { type: String, required: true },
+  },
   data() {
     return {
       valid: false,
@@ -56,7 +59,9 @@ export default Vue.extend({
   },
   methods: {
     async submit() {
-      await this.$mails.sendMail(this.from, "dbr.bcn@gmail.com", this.body);
+      this.valid = false;
+      await this.$mails.sendMail(this.from, this.to, this.body);
+      this.valid = true;
     },
   },
 });

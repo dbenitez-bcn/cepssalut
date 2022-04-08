@@ -7,7 +7,7 @@
     <v-divider class="d-none d-sm-flex"></v-divider>
     <area-list-view></area-list-view>
     <v-divider class="d-none d-sm-flex"></v-divider>
-    <email-box></email-box>
+    <email-box to="cepssalut@gmail.com"></email-box>
   </v-container>
 </template>
 
