@@ -19,6 +19,17 @@
             placeholder="Escriu aqui la teva consulta"
             :rules="[rules.required]"
           ></v-textarea>
+          <v-scroll-x-transition>
+            <div class="d-flex justify-center mb-2" v-if="send">
+              <p class="caption mb-0">Email enviar correctament </p>
+              <v-icon
+                color="success"
+                dense
+              >
+                mdi-check
+              </v-icon>
+            </div>
+            </v-scroll-x-transition>
           <div class="d-flex justify-center">
             <v-btn
               :disabled="!valid"
@@ -35,7 +46,7 @@
   </v-container>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 
 export default Vue.extend({
@@ -45,11 +56,12 @@ export default Vue.extend({
   data() {
     return {
       valid: false,
+      send: false,
       body: "",
       from: "",
       rules: {
-        required: (value: string) => !!value || "",
-        email: (value: string) => {
+        required: (value) => !!value || "",
+        email: (value) => {
           const pattern =
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           return pattern.test(value) || "Email invàlid";
@@ -61,7 +73,9 @@ export default Vue.extend({
     async submit() {
       this.valid = false;
       await this.$mails.sendMail(this.from, this.to, this.body);
-      this.valid = true;
+      this.send = true;
+      setTimeout(() => { this.send = false;}, 1500)
+      this.$refs.emailForm.reset()
     },
   },
 });
