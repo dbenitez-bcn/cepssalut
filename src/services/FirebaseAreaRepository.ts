@@ -19,7 +19,7 @@ export default class FirebaseAreaRepository implements AreaRepository {
     }
 
     private toArea(id: string, area: any): Area {
-        return new Area(id, area["title"], area["description"], area["image"]);
+        return new Area(id, area["title"], area["description"], area["image"], area["mail_to"]);
     }
 
 }

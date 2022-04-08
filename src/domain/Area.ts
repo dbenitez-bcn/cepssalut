@@ -3,6 +3,7 @@ export default class Area {
         readonly id: string,
         readonly title: string,
         readonly description: string,
-        readonly image: string
+        readonly image: string,
+        readonly mailTo: string
     ) {}
 }

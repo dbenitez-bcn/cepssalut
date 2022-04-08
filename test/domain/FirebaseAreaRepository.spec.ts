@@ -11,8 +11,8 @@ describe("FirebaseAreaRepository", () => {
         const got = await sut.getAll();
 
         expect(got).toHaveLength(2);
-        expect(got[0]).toStrictEqual(new Area("area-1", "Title area 1", "Description area 1", "image/path/area1.png"));
-        expect(got[1]).toStrictEqual(new Area("area-2", "Title area 2", "Description area 2", "image/path/area2.png"));
+        expect(got[0]).toStrictEqual(new Area("area-1", "Title area 1", "Description area 1", "image/path/area1.png", "mail"));
+        expect(got[1]).toStrictEqual(new Area("area-2", "Title area 2", "Description area 2", "image/path/area2.png", "mail"));
         expect(firestore.collection).toBeCalledWith("areas")
     })
 
@@ -21,7 +21,7 @@ describe("FirebaseAreaRepository", () => {
 
         const got = await sut.getById("area");
 
-        expect(got).toStrictEqual(new Area("area", "Title area", "Description area", "image/path/area.png"));
+        expect(got).toStrictEqual(new Area("area", "Title area", "Description area", "image/path/area.png", "mail"));
         expect(firestore.collection).toBeCalledWith("areas")
     })
 
@@ -35,7 +35,8 @@ describe("FirebaseAreaRepository", () => {
                             {
                                 "title": "Title area 1",
                                 "description": "Description area 1",
-                                "image": "image/path/area1.png"
+                                "image": "image/path/area1.png",
+                                "mail_to": "mail"
                             }
                         )
                     },
@@ -44,7 +45,8 @@ describe("FirebaseAreaRepository", () => {
                         data: jest.fn().mockReturnValue({
                             "title": "Title area 2",
                             "description": "Description area 2",
-                            "image": "image/path/area2.png"
+                            "image": "image/path/area2.png",
+                            "mail_to": "mail"
                         })
                     }
                 ]
@@ -61,7 +63,8 @@ describe("FirebaseAreaRepository", () => {
                         {
                             "title": "Title area",
                             "description": "Description area",
-                            "image": "image/path/area.png"
+                            "image": "image/path/area.png",
+                            "mail_to": "mail"
                         }
                     )
                 })
