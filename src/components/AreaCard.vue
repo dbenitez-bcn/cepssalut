@@ -1,7 +1,7 @@
 <template>
   <v-card class="fill-height">
     <v-img
-      :src="require(`~/assets/areas/${area.image}`)"
+      :src="area.image"
       height="200px"
     ></v-img>
     <div class="one-line title px-4 pt-4" v-text="area.title"></div>

@@ -11,7 +11,7 @@
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
       <v-img
-        :src="require(`~/assets/areas/${area.image}`)"
+      :src="area.image"
         max-height="300"
       ></v-img>
       <title-and-subtitle
