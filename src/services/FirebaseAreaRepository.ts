@@ -18,6 +18,36 @@ export default class FirebaseAreaRepository implements AreaRepository {
         return this.toArea(area.id, area.data());
     }
 
+    // TODO: Add test
+    async delete(id: string): Promise<boolean> {
+        await this.database.collection('areas').doc(id).delete();
+        return true;
+    }
+
+    // TODO: Add test
+    async create(title: string, description: string, image: string, mailTo: string): Promise<Area> {
+        const data = {
+            title,
+            description,
+            mail_to: mailTo,
+            image
+        };
+        const areaDocument = await this.database.collection('areas').add(data)
+        return this.toArea(areaDocument.id, data);
+    }
+
+    // TODO: Add test
+    async update(id: string, title: string, description: string, image: string, mailTo: string): Promise<Area> {
+        const data = {
+            title,
+            description,
+            mail_to: mailTo,
+            image
+        };
+        await this.database.collection('areas').doc(id).set(data);
+        return this.toArea(id, data);
+    }
+
     private toArea(id: string, area: any): Area {
         return new Area(id, area["title"], area["description"], area["image"], area["mail_to"]);
     }

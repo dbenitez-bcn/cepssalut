@@ -5,6 +5,11 @@ import Area from "~/domain/Area";
 describe("FirebaseAreaRepository", () => {
     const firestore = jest.fn() as any as firebase.firestore.Firestore;
     const sut = new FirebaseAreaRepository(firestore);
+
+    afterEach(() => {
+        jest.clearAllMocks;
+        jest.clearAllTimers;
+    })
     it("should return all areas", async () => {
         willFindAreas();
 
@@ -23,6 +28,65 @@ describe("FirebaseAreaRepository", () => {
 
         expect(got).toStrictEqual(new Area("area", "Title area", "Description area", "image/path/area.png", "mail"));
         expect(firestore.collection).toBeCalledWith("areas")
+    })
+
+    it("should delete the area for the given id", async () => {
+        const deleteFn = jest.fn();
+        const doc = jest.fn().mockReturnValue({
+            delete: deleteFn
+        });
+        firestore.collection = jest.fn().mockReturnValue({
+            doc
+        });
+
+        const got = await sut.delete("123");
+
+        expect(got).toBe(true);
+        expect(firestore.collection).toBeCalledWith("areas");
+        expect(deleteFn).toBeCalled();
+        expect(doc).toBeCalledWith("123");
+    });
+
+    it("should update an area with the given data", async () => {
+        const set = jest.fn();
+        const doc = jest.fn().mockReturnValue({
+            set
+        });
+        firestore.collection = jest.fn().mockReturnValue({
+            doc
+        });
+
+        const got = await sut.update("123", "title", "description", "image", "mailTo");
+
+        expect(got).toStrictEqual(new Area("123", "title", "description", "image", "mailTo"));
+        expect(firestore.collection).toBeCalledWith("areas");
+        expect(set).toBeCalledWith({
+            title: "title",
+            description: "description",
+            mail_to: "mailTo",
+            image: "image"
+        });
+        expect(doc).toBeCalledWith("123");
+    })
+
+    it("should create an area with the given data", async () => {
+        const add = jest.fn().mockResolvedValue({
+            id: "123"
+        });
+        firestore.collection = jest.fn().mockReturnValue({
+            add
+        });
+
+        const got = await sut.create("title", "description", "image", "mailTo");
+
+        expect(got).toStrictEqual(new Area("123", "title", "description", "image", "mailTo"));
+        expect(firestore.collection).toBeCalledWith("areas");
+        expect(add).toBeCalledWith({
+            title: "title",
+            description: "description",
+            mail_to: "mailTo",
+            image: "image"
+        });
     })
 
     const willFindAreas = () => {
