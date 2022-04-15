@@ -1,5 +1,13 @@
 # cepssalut
 
+## Setup
+- Clone the repository
+- Open it in VSCode
+- Create a `.env` file using the `.env.example` as example and populate the variables
+    - You can find the firebase api key in firebase > ceps-salut > Ceps salut - web > Clave de API web
+- The run `npm install` to install dependencies
+- Once you are finished you can run the application in dev mode with `npm run dev`
+
 ## Build Setup
 
 ```bash
@@ -19,7 +27,7 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## Nuxt directories documentation
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
