@@ -106,9 +106,18 @@ export default {
       measurementId: "G-GNP7TX6S9C"
     },
     services: {
-      auth: true,
-      firestore: true,
-      storage: true,
+      auth: {
+        emulatorPort: process.env.NODE_ENV === 'development' ? 9099 : undefined,
+        emulatorHost: process.env.NODE_ENV === 'development' ? 'http://localhost' : undefined,
+      },
+      firestore: {
+        emulatorPort: process.env.NODE_ENV === 'development' ? 8080 : undefined,
+        emulatorHost: process.env.NODE_ENV === 'development' ? 'localhost' : undefined,
+      },
+      storage: {
+        emulatorPort: process.env.NODE_ENV === 'development' ? 8080 : undefined,
+        emulatorHost: process.env.NODE_ENV === 'development' ? 'localhost' : undefined,
+      },
     }
   },
 
