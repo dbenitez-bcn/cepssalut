@@ -107,6 +107,7 @@ export default {
     },
     services: {
       auth: {
+        persistence: 'local',
         emulatorPort: process.env.NODE_ENV === 'development' ? 9099 : undefined,
         emulatorHost: process.env.NODE_ENV === 'development' ? 'http://localhost' : undefined,
       },
