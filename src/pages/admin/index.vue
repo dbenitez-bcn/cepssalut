@@ -1,7 +1,6 @@
 <template>
     <v-container>
-        <admin-view v-if="this.$fire.auth.currentUser"></admin-view>
-        <login-modal v-else></login-modal>
+        <admin-view></admin-view>
     </v-container>
 </template>
 

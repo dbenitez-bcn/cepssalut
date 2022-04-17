@@ -1,12 +1,12 @@
 <template>
-  <v-card>
+  <v-card class="d-flex flex-column pa-4">
     <v-text-field label="Email" v-model="email"></v-text-field>
     <v-text-field
       label="Contrasenya"
       v-model="password"
       type="password"
     ></v-text-field>
-    <v-btn @click="login">Accedir</v-btn>
+    <v-btn class="align-self-center" color="primary" @click="login">Accedir</v-btn>
   </v-card>
 </template>
 
@@ -24,7 +24,7 @@ export default Vue.extend({
     async login() {
       await this.$fire.auth
         .signInWithEmailAndPassword(this.email, this.password)
-        .then((val) => location.reload())
+        .then((val) => this.$router.back())
         .catch(console.log);
     },
   },
