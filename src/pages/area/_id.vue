@@ -30,7 +30,7 @@ import Vue from "vue";
 export default Vue.extend({
   head() {
     return {
-      title: this.area ? this.area.id : "",
+      title: this.area ? this.area.title : "",
     };
   },
   data() {
