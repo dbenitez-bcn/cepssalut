@@ -3,7 +3,7 @@ export default function ({ $fire, redirect, route }) {
 }
 
 function isAdminRoute(route) {
-  if (route.matched.some(record => record.path == '/admin')) {
+  if (route.path.includes('admin')) {
     return true
   }
 }
