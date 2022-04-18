@@ -119,7 +119,7 @@ export default {
         emulatorHost: process.env.NODE_ENV === 'development' ? 'localhost' : undefined,
       },
       storage: {
-        emulatorPort: process.env.NODE_ENV === 'development' ? 8080 : undefined,
+        emulatorPort: process.env.NODE_ENV === 'development' ? 9199 : undefined,
         emulatorHost: process.env.NODE_ENV === 'development' ? 'localhost' : undefined,
       },
     }
