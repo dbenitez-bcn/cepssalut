@@ -4,7 +4,7 @@
         <v-icon color="" class="pa-2"> mdi-pencil </v-icon>
         <p class="mb-0">{{ area.title }}</p>
         <v-spacer></v-spacer>
-        <delete-button :area="area"></delete-button>
+        <delete-button :title="area.title" @accept="onAccept"></delete-button>
     </v-row>
   </v-col>
 </template>
@@ -23,6 +23,10 @@ export default Vue.extend({
   methods: {
     toEditArea() {
       this.$router.push(`/admin/area/${this.area.id}/edit`);
+    },
+    async onAccept() {
+      await this.$areas.delete(this.area.id);
+      location.reload();
     }
   },
 });

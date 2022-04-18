@@ -8,7 +8,7 @@
     <v-card>
       <v-card-title class="text-h5"> Eliminar area </v-card-title>
       <v-card-text
-        >Segur que vols eliminar <b>{{ area.title }}</b>? Aquesta acció es
+        >Segur que vols eliminar <b>{{ title }}</b>? Aquesta acció es
         irreversible.</v-card-text
       >
       <v-card-actions>
@@ -30,8 +30,8 @@ import Area from "~/domain/Area";
 
 export default Vue.extend({
   props: {
-    area: {
-      type: Area,
+    title: {
+      type: String,
       required: true,
     },
   },
@@ -43,8 +43,7 @@ export default Vue.extend({
   methods: {
     async deleteArea() {
       this.dialog = false;
-      await this.$areas.delete(this.area.id);
-      location.reload();
+      this.$emit("accept");
     },
   },
 });
