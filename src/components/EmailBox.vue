@@ -21,7 +21,7 @@
           ></v-textarea>
           <v-scroll-x-transition>
             <div class="d-flex justify-center mb-2" v-if="send">
-              <p class="caption mb-0">Email enviar correctament </p>
+              <p class="caption mb-0">Email envia't correctament </p>
               <v-icon
                 color="success"
                 dense
@@ -74,7 +74,7 @@ export default Vue.extend({
       this.valid = false;
       await this.$mails.sendMail(this.from, this.to, this.body);
       this.send = true;
-      setTimeout(() => { this.send = false;}, 1500)
+      setTimeout(() => { this.send = false;}, 2000)
       this.$refs.emailForm.reset()
     },
   },
