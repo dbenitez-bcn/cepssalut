@@ -7,7 +7,7 @@
     </v-row>
     <v-row justify="center" >
       <v-col sm="8">
-        <div class="body-1 text-justify" v-text="subtitle"></div>
+        <span style="white-space: pre-line" class="body-1 text-justify" v-text="subtitle"></span>
       </v-col>
     </v-row>
   </v-container>
