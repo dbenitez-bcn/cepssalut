@@ -12,7 +12,7 @@
       style="display: none"
     />
     <div
-      v-if="!image"
+      v-if="!src"
       class="d-flex flex-column justify-center align-center info-box"
     >
       <v-icon size="128" color="primary" class="pa-2">
@@ -20,7 +20,7 @@
       </v-icon>
       <div class="headline text-justify" v-text="text"></div>
     </div>
-    <v-img v-else :src="image" max-height="300"></v-img>
+    <v-img v-else :src="src" max-height="300"></v-img>
   </div>
 </template>
 
@@ -28,9 +28,15 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  props: {
+      image: {
+        type: String,
+        default: ""
+      }
+  },
   data() {
     return {
-      image: "",
+      src: this.image,
       text: "Clica o arrastra la imatge",
     };
   },
@@ -52,8 +58,8 @@ export default Vue.extend({
             contentType: file.type,
           })
           .catch((e) => console.log(e));
-        this.image = await imageRef.getDownloadURL();
-        this.$emit("image-uploaded", this.image);
+        this.src = await imageRef.getDownloadURL();
+        this.$emit("image-uploaded", this.src);
       }
     },
   },
