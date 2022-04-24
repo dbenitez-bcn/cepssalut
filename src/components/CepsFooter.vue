@@ -8,6 +8,9 @@
         <v-col> {{ phone }}</v-col>
       </v-row>
       <v-row>
+        <v-col> {{ instagram }}</v-col>
+      </v-row>
+      <v-row>
         <v-col class="text-center" cols="12">
           {{ new Date().getFullYear() }} — <strong>{{ cepsalut }} ©</strong>
         </v-col>
@@ -25,6 +28,7 @@ export default Vue.extend({
       email: "infocepssalut@gmail.com",
       phone: "933456048",
       cepsalut: "Ceps Salut",
+      instagram: "@cepssalut"
     };
   },
 });
